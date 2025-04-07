@@ -10,15 +10,14 @@ function gerarSenha(tamanho = 12) {
     document.getElementById("senhaGerada").value = senha;
   }
   
-  function toggleGerador() {
+  function toggleGerador(botao) {
     const box = document.getElementById("geradorSenhaBox");
-    const botao = document.getElementById("toggleGeradorBtn");
   
-    box.classList.toggle("oculto");
-  
-    if (!box.classList.contains("oculto")) {
+    if (box.classList.contains("oculto")) {
+      box.classList.remove("oculto");
       botao.textContent = "Ocultar";
     } else {
+      box.classList.add("oculto");
       botao.textContent = "Usar";
     }
   }
