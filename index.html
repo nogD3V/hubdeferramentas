@@ -46,8 +46,20 @@
     </section>
   </main>
 
+  <section class="ferramenta">
+    <h2>Gerador de Senhas</h2>
+    <button onclick="toggleGerador()">Usar</button>
+  
+    <div id="geradorSenhaBox" class="oculto">
+      <button onclick="gerarSenha()">Gerar Senha</button>
+      <input type="text" id="senhaGerada" readonly placeholder="Sua senha aparecerá aqui">
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Hub de Ferramentas</p>
   </footer>
+
+  <script src="js/gerarSenha.js"></script>
 </body>
 </html>

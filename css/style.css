@@ -89,3 +89,17 @@ footer {
   font-size: 14px;
   color: #777;
 }
+
+/* GERADOR DE SENHA */
+.ferramenta {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+#geradorSenhaBox {
+  margin-top: 20px;
+}
