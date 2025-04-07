@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hub de Ferramentas</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header>
-    <h1>Hub de Ferramentas</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Texto</a></li>
-        <li><a href="#">PDF</a></li>
-        <li><a href="#">Senha</a></li>
-        <li><a href="#">Mais</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hub de Ferramentas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hub de Ferramentas</h1>
+      <nav>
+        <a href="#">Texto</a>
+        <a href="#">PDF</a>
+        <a href="#">Senha</a>
+        <a href="#">Mais</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="intro">
+    <section class="main">
       <h2>Ferramentas simples, úteis e gratuitas.</h2>
       <p>Converta textos, edite PDFs, gere senhas seguras e muito mais.</p>
+
+      <div class="tools">
+        <!-- Conversor de Texto -->
+        <div class="tool-card">
+          <h3>🔤 Conversor de Texto</h3>
+          <p>Transforme letras maiúsculas em minúsculas (e vice-versa).</p>
+          <button>Usar</button>
+        </div>
+
+        <!-- Editor de PDF -->
+        <div class="tool-card">
+          <h3>📄 Editor de PDF</h3>
+          <p>Divida, compacte ou converta arquivos PDF com facilidade.</p>
+          <button>Usar</button>
+        </div>
+
+        <!-- Gerador de Senha -->
+        <div class="tool-card">
+          <h3>🔐 Gerador de Senha</h3>
+          <p>Crie senhas fortes e seguras com apenas um clique.</p>
+          <button id="toggleBotao" onclick="toggleGerador(this)">Usar</button>
+
+          <div id="geradorSenhaBox" class="oculto">
+            <input type="text" id="senhaGerada" readonly placeholder="Sua senha aparecerá aqui" />
+            <button onclick="gerarSenha()">Gerar Senha</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="tools">
-      <div class="tool-card">
-        <h3>🔠 Conversor de Texto</h3>
-        <p>Transforme letras maiúsculas em minúsculas (e vice-versa).</p>
-        <a href="#">Usar</a>
-      </div>
+    <footer>
+      &copy; 2025 Hub de Ferramentas
+    </footer>
 
-      <div class="tool-card">
-        <h3>📄 Editor de PDF</h3>
-        <p>Divida, compacte ou converta arquivos PDF com facilidade.</p>
-        <a href="#">Usar</a>
-      </div>
-
-      <div class="tool-card">
-        <h3>🔐 Gerador de Senha</h3>
-        <p>Crie senhas fortes e seguras com apenas um clique.</p>
-        <a href="#" id="
+    <script src="script.js"></script>
+  </body>
+</html>
