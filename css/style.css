@@ -39,9 +39,9 @@ nav a {
 .tools {
   display: flex;
   justify-content: center;
+  align-items: start; /* <- Isso aqui faz com que os cards não fiquem presos na mesma altura */
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 30px;
 }
 
 .tool-card {
@@ -93,6 +93,13 @@ nav a {
 
 #geradorSenhaBox {
   margin-top: 15px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+#geradorSenhaBox:not(.oculto) {
+  max-height: 150px; /* ou o valor suficiente pro conteúdo aparecer */
 }
 
 #geradorSenhaBox input {
