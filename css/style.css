@@ -90,16 +90,37 @@ footer {
   color: #777;
 }
 
-/* GERADOR DE SENHA */
-.ferramenta {
-  margin: 40px auto;
+/* Gerador de Senha */
+#geradorSenhaBox {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#geradorSenhaBox input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
   text-align: center;
+}
+
+#geradorSenhaBox button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#geradorSenhaBox button:hover {
+  background-color: #357bd8;
 }
 
 .oculto {
   display: none;
-}
-
-#geradorSenhaBox {
-  margin-top: 20px;
 }
