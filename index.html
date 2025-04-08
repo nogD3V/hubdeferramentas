@@ -40,10 +40,13 @@
         <div class="tool-card">
           <h3>🔐 Gerador de Senha</h3>
           <p>Crie senhas fortes e seguras com apenas um clique.</p>
-          <button id="toggleBotao" onclick="toggleGerador(this)">Usar</button>
+          <button id="toggleBotao" onclick="toggleGerador(this); gerarSenha()">Usar</button>
 
           <div id="geradorSenhaBox" class="oculto">
-            <input type="text" id="senhaGerada" readonly placeholder="Sua senha aparecerá aqui" />
+            <div class="senha-container">
+              <input type="text" id="senhaGerada" class="password-display" readonly placeholder="Sua senha aparecerá aqui" />
+              <button id="copiarSenha" onclick="copiarSenha()" title="Copiar">📋</button>
+            </div>
             <button onclick="gerarSenha()">Gerar Senha</button>
           </div>
         </div>
