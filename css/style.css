@@ -302,3 +302,15 @@ body.light-mode footer {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  #themeToggle {
+    position: static;
+    display: block;
+    margin: 10px auto 0;
+  }
+
+  header {
+    padding-top: 10px;
+  }
+}
