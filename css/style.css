@@ -303,6 +303,11 @@ body.light-mode footer {
   }
 }
 
+/* Ajuste de posição do banner de cookies */
+#usercentrics-root {
+  bottom: 30px !important; /* ou 40px, 50px, ajuste como preferir */
+}
+
 @media (max-width: 600px) {
   #themeToggle {
     position: static;
@@ -310,7 +315,12 @@ body.light-mode footer {
     margin: 10px auto 0;
   }
 
+  #usercentrics-root {
+    bottom: 60px !important; /* sobe o banner em telas pequenas */
+  }
+}
+
   header {
     padding-top: 10px;
   }
-}
+
