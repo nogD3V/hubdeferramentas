@@ -305,7 +305,9 @@ body.light-mode footer {
 
 /* Ajuste de posição do banner de cookies */
 #usercentrics-root {
-  bottom: 30px !important; /* ou 40px, 50px, ajuste como preferir */
+  bottom: 30px !important;
+  z-index: 9999 !important; /* garante que fique visível acima do footer */
+  position: fixed !important;
 }
 
 @media (max-width: 600px) {
