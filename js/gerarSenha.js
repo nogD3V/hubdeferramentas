@@ -16,9 +16,7 @@ function gerarSenha() {
     senha += todos.charAt(Math.floor(Math.random() * todos.length));
   }
 
-  // Embaralha a senha para distribuir os caracteres especiais
   senha = senha.split('').sort(() => Math.random() - 0.5).join('');
-
   document.getElementById("senhaGerada").value = senha;
 }
 
@@ -45,3 +43,30 @@ function copiarSenha() {
   botao.textContent = "✅";
   setTimeout(() => (botao.textContent = original), 1000);
 }
+
+// Alternância de tema com transição suave do emoji
+function toggleTheme() {
+  const body = document.body;
+  const toggleBtn = document.getElementById("themeToggle");
+  body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    toggleBtn.setAttribute("data-theme-icon", "🌙");
+    localStorage.setItem("theme", "light");
+  } else {
+    toggleBtn.setAttribute("data-theme-icon", "☀️");
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  const toggleBtn = document.getElementById("themeToggle");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    toggleBtn.setAttribute("data-theme-icon", "🌙");
+  } else {
+    toggleBtn.setAttribute("data-theme-icon", "☀️");
+  }
+});

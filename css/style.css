@@ -3,39 +3,42 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #0a0a0a;
+  color: #f2f2f2;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Fixar footer no final da tela */
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
 html, body {
   height: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-     -ms-flex-direction: column;
-         flex-direction: column;
+  flex-direction: column;
 }
 
 body {
-  -webkit-flex: 1;
-     -ms-flex: 1;
-         flex: 1;
+  flex: 1;
 }
 
 .main {
-  -webkit-flex: 1;
-     -ms-flex: 1;
-         flex: 1;
+  flex: 1;
 }
 
-/* Cabeçalho */
 header {
-  background-color: #1d1d1d;
+  background-color: #000;
   color: white;
   padding: 20px 0;
   text-align: center;
+  animation: fadeIn 1s ease;
+  position: relative;
+}
+
+body.light-mode header {
+  background-color: #fff;
+  color: #111;
 }
 
 nav {
@@ -43,97 +46,153 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #ff0033;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* Conteúdo principal */
+body.light-mode nav a {
+  color: #cc0029;
+}
+
+nav a:hover {
+  color: #cc0029;
+}
+
+body.light-mode nav a:hover {
+  color: #99001f;
+}
+
+/* Botão de alternar tema */
+#themeToggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ff0033;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#themeToggle:focus {
+  outline: none;
+}
+
+body.light-mode #themeToggle {
+  color: #cc0029;
+}
+
+#themeToggle:hover {
+  color: #99001f;
+}
+
+/* Transição suave do emoji */
+#themeToggle::after {
+  content: attr(data-theme-icon);
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
 .main {
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
   text-align: center;
+  animation: fadeInUp 1s ease;
 }
 
 .main h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
+  color: inherit;
 }
 
 .tools {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-     -ms-flex-pack: center;
-         justify-content: center;
-  -webkit-align-items: flex-start;
-     -ms-flex-align: start;
-         align-items: start;
-  -webkit-flex-wrap: wrap;
-     -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .tool-card {
-  background-color: white;
+  background-color: #111;
+  color: #eee;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.15);
   padding: 20px;
   width: 280px;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+body.light-mode .tool-card {
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tool-card:hover {
-  -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
 }
 
 .tool-card h3 {
   margin-top: 0;
   font-size: 1.2rem;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: #ff0033;
   display: flex;
-  -webkit-align-items: center;
-     -ms-flex-align: center;
-         align-items: center;
-  -webkit-justify-content: center;
-     -ms-flex-pack: center;
-         justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
+}
+
+body.light-mode .tool-card h3 {
+  color: #cc0029;
 }
 
 .tool-card p {
   font-size: 0.95rem;
+  color: #aaa;
+}
+
+body.light-mode .tool-card p {
   color: #555;
 }
 
 .tool-card button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #e63946;
+  background-color: #ff0033;
   color: white;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.light-mode .tool-card button {
+  background-color: #cc0029;
 }
 
 .tool-card button:hover {
-  background-color: #d8355e;
+  background-color: #cc0029;
+  transform: scale(1.05);
 }
 
-/* Gerador de Senha */
+body.light-mode .tool-card button:hover {
+  background-color: #99001f;
+}
+
 .oculto {
   display: none;
 }
@@ -141,7 +200,6 @@ nav a {
 #geradorSenhaBox {
   margin-top: 15px;
   overflow: hidden;
-  -webkit-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
   max-height: 0;
 }
@@ -154,15 +212,10 @@ nav a {
   margin-top: 10px;
 }
 
-/* Campo com botão de copiar embutido */
 .senha-container {
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -ms-flex-align: center;
-         align-items: center;
+  align-items: center;
   max-width: 100%;
   margin-top: 10px;
 }
@@ -171,10 +224,24 @@ nav a {
   width: 100%;
   padding: 10px 40px 10px 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ff0033;
+  background-color: #1e1e1e;
   border-radius: 8px;
   box-sizing: border-box;
   text-align: center;
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+body.light-mode .senha-container input {
+  background-color: #fff;
+  color: #111;
+  border-color: #cc0029;
+}
+
+.senha-container input:focus {
+  outline: none;
+  border-color: #ff0033;
 }
 
 .senha-container button {
@@ -186,27 +253,52 @@ nav a {
   cursor: pointer;
   font-size: 1.2rem;
   padding: 0;
-  color: #333;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: #bbb;
   display: flex;
-  -webkit-align-items: center;
-     -ms-flex-align: center;
-         align-items: center;
-  -webkit-justify-content: center;
-     -ms-flex-pack: center;
-         justify-content: center;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+body.light-mode .senha-container button {
+  color: #444;
 }
 
 .senha-container button:hover {
-  color: #d20000;
+  color: #ff0033;
 }
 
-/* Rodapé */
+body.light-mode .senha-container button:hover {
+  color: #cc0029;
+}
+
 footer {
   text-align: center;
   margin-top: auto;
   padding: 20px;
   font-size: 0.9rem;
+  background-color: #000;
   color: #777;
+  animation: fadeIn 1s ease;
+}
+
+body.light-mode footer {
+  background-color: #fff;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
