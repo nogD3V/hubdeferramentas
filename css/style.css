@@ -275,14 +275,12 @@ body.light-mode .senha-container button:hover {
 footer {
   text-align: center;
   margin-top: auto;
-  padding: 40px 20px 60px; /* aumentei o padding inferior */
+  padding: 20px;
   font-size: 0.9rem;
   background-color: #000;
   color: #777;
   animation: fadeIn 1s ease;
-  position: relative; /* garante que o banner não fique em cima */
 }
-
 
 body.light-mode footer {
   background-color: #fff;
@@ -305,22 +303,11 @@ body.light-mode footer {
   }
 }
 
-/* Ajuste de posição do banner de cookies */
-#usercentrics-root {
-  bottom: 30px !important;
-  z-index: 9999 !important; /* garante que fique visível acima do footer */
-  position: fixed !important;
-}
-
 @media (max-width: 600px) {
   #themeToggle {
     position: static;
     display: block;
     margin: 10px auto 0;
-  }
-
-  #usercentrics-root {
-    bottom: 60px !important; /* sobe o banner em telas pequenas */
   }
 }
 
@@ -328,6 +315,3 @@ body.light-mode footer {
     padding-top: 10px;
   }
 
-  body {
-    padding-bottom: 80px; /* reserva espaço visual para o banner */
-  }
