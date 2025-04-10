@@ -275,12 +275,14 @@ body.light-mode .senha-container button:hover {
 footer {
   text-align: center;
   margin-top: auto;
-  padding: 20px;
+  padding: 40px 20px 60px; /* aumentei o padding inferior */
   font-size: 0.9rem;
   background-color: #000;
   color: #777;
   animation: fadeIn 1s ease;
+  position: relative; /* garante que o banner não fique em cima */
 }
+
 
 body.light-mode footer {
   background-color: #fff;
@@ -326,3 +328,6 @@ body.light-mode footer {
     padding-top: 10px;
   }
 
+  body {
+    padding-bottom: 80px; /* reserva espaço visual para o banner */
+  }
