@@ -1,0 +1,38 @@
+body {
+    background-color: #0a0a0a;
+    color: #f2f2f2;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .agradecimento {
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .agradecimento h1 {
+    font-size: 2rem;
+    color: #ff0033;
+  }
+  
+  .agradecimento p {
+    margin-top: 15px;
+    color: #ccc;
+  }
+  
+  .agradecimento a {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #ff0033;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .agradecimento a:hover {
+    background-color: #cc0029;
+  }
+  

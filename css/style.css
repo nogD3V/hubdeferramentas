@@ -1,4 +1,6 @@
-/* Reset e base */
+/* ==========================
+   Reset e Base
+========================== */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -27,6 +29,9 @@ body {
   flex: 1;
 }
 
+/* ==========================
+   Header e Navegação
+========================== */
 header {
   background-color: #000;
   color: white;
@@ -65,7 +70,9 @@ body.light-mode nav a:hover {
   color: #99001f;
 }
 
-/* Botão de alternar tema */
+/* ==========================
+   Botão de alternar tema
+========================== */
 #themeToggle {
   position: absolute;
   top: 15px;
@@ -94,13 +101,15 @@ body.light-mode #themeToggle {
   color: #99001f;
 }
 
-/* Transição suave do emoji */
 #themeToggle::after {
   content: attr(data-theme-icon);
   display: inline-block;
   transition: opacity 0.3s ease;
 }
 
+/* ==========================
+   Conteúdo principal
+========================== */
 .main {
   max-width: 1000px;
   margin: 40px auto;
@@ -123,6 +132,9 @@ body.light-mode #themeToggle {
   gap: 20px;
 }
 
+/* ==========================
+   Cards
+========================== */
 .tool-card {
   background-color: #111;
   color: #eee;
@@ -193,6 +205,32 @@ body.light-mode .tool-card button:hover {
   background-color: #99001f;
 }
 
+.tool-card {
+  height: auto;
+  min-height: 165px; /* ajuste conforme seus outros cards */
+  overflow: hidden;
+  position: relative;
+}
+
+.tool-card .oculto {
+  display: none;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: none !important;
+}
+
+#conversorBox {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+#conversorBox:not(.oculto) {
+  max-height: 600px;
+}
+/* ==========================
+   Ocultos
+========================== */
 .oculto {
   display: none;
 }
@@ -212,6 +250,9 @@ body.light-mode .tool-card button:hover {
   margin-top: 10px;
 }
 
+/* ==========================
+   Senha
+========================== */
 .senha-container {
   position: relative;
   display: flex;
@@ -272,10 +313,80 @@ body.light-mode .senha-container button:hover {
   color: #cc0029;
 }
 
+/* ==========================
+   Conversor de Texto
+========================== */
+#conversorBox {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+#conversorBox:not(.oculto) {
+  max-height: 600px;
+}
+
+#conversorBox textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #ff0033;
+  background-color: #1e1e1e;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+body.light-mode #conversorBox textarea {
+  background-color: #fff;
+  color: #111;
+  border-color: #cc0029;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-group button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff0033;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .btn-group button {
+  background-color: #cc0029;
+}
+
+.btn-group button:hover {
+  background-color: #cc0029;
+}
+
+body.light-mode .btn-group button:hover {
+  background-color: #99001f;
+}
+
+/* ==========================
+   Footer
+========================== */
 footer {
   text-align: center;
   margin-top: auto;
-  padding: 20px;
+  padding: 30px 20px 20px;
   font-size: 0.9rem;
   background-color: #000;
   color: #777;
@@ -287,6 +398,40 @@ body.light-mode footer {
   color: #555;
 }
 
+.footer-links {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #ff0033;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+body.light-mode .footer-links a {
+  color: #cc0029;
+}
+
+.footer-links a:hover {
+  color: #ff3366;
+}
+
+body.light-mode .footer-links a:hover {
+  color: #99001f;
+}
+
+.footer-links span {
+  color: #555;
+}
+
+/* ==========================
+   Animações
+========================== */
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -303,15 +448,22 @@ body.light-mode footer {
   }
 }
 
+/* ==========================
+   Responsividade
+========================== */
 @media (max-width: 600px) {
   #themeToggle {
     position: static;
     display: block;
     margin: 10px auto 0;
   }
+
+  .tools {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-  header {
-    padding-top: 10px;
-  }
-
+header {
+  padding-top: 10px;
+}

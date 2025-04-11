@@ -25,18 +25,33 @@
       <p>Converta textos, edite PDFs, gere senhas seguras e muito mais.</p>
 
       <div class="tools">
+        <!-- Conversor de Texto -->
         <div class="tool-card">
           <h3>🔤 Conversor de Texto</h3>
           <p>Transforme letras maiúsculas em minúsculas (e vice-versa).</p>
-          <button>Em construção</button>
+          <button id="toggleConversor" onclick="toggleConversor(this)">Usar</button>
+
+          <div id="conversorBox" class="oculto">
+            <textarea id="textoEntrada" placeholder="Digite seu texto aqui..."></textarea>
+            <div class="btn-group">
+              <button onclick="converterTexto('maiusculas')">MAIÚSCULAS</button>
+              <button onclick="converterTexto('minusculas')">minúsculas</button>
+              <button onclick="converterTexto('capitalizar')">Capitalizar</button>
+              <button onclick="converterTexto('inverter')">Inverter</button>
+              <button onclick="converterTexto('limpar')">Limpar</button>
+            </div>
+            <textarea id="textoSaida" placeholder="Resultado..." readonly></textarea>
+          </div>
         </div>
 
+        <!-- Editor de PDF -->
         <div class="tool-card">
           <h3>📄 Editor de PDF</h3>
           <p>Divida, compacte ou converta arquivos PDF com facilidade.</p>
           <button>Em construção</button>
         </div>
 
+        <!-- Gerador de Senha -->
         <div class="tool-card">
           <h3>🔐 Gerador de Senha</h3>
           <p>Crie senhas fortes e seguras com apenas um clique.</p>
@@ -54,9 +69,17 @@
     </section>
 
     <footer>
-      &copy; 2025 Hub de Ferramentas
+      <div class="footer-links">
+        <a href="pages/contato.html">Contato</a>
+        <span>|</span>
+        <a href="pages/politica.html">Política de Privacidade</a>
+        <span>|</span>
+        <a href="pages/termos.html">Termos de Uso</a>
+      </div>
+      <p>&copy; 2025 Hub de Ferramentas</p>
     </footer>
 
     <script src="js/gerarSenha.js"></script>
+    <script src="js/conversorTexto.js"></script>
   </body>
 </html>
