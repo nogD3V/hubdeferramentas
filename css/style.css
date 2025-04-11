@@ -27,6 +27,11 @@ body {
 
 .main {
   flex: 1;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
 }
 
 /* ==========================
@@ -110,13 +115,7 @@ body.light-mode #themeToggle {
 /* ==========================
    Conteúdo principal
 ========================== */
-.main {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-  animation: fadeInUp 1s ease;
-}
+
 
 .main h2 {
   font-size: 1.8rem;
@@ -182,7 +181,7 @@ body.light-mode .tool-card p {
 }
 
 .tool-card button {
-  margin-top: 15px;
+  margin-top: 5px;
   padding: 10px 20px;
   background-color: #ff0033;
   color: white;
@@ -220,6 +219,29 @@ body.light-mode .tool-card button:hover {
   transition: none !important;
 }
 
+.tool-card .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2px;
+}
+
+.tool-card .btn-group a button {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color, #6c63ff);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tool-card .btn-group a button:hover {
+  background-color: var(--accent-color-dark, #5146d9);
+}
+
 #conversorBox {
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -241,15 +263,162 @@ body.light-mode .tool-card button:hover {
   overflow: hidden;
   transition: max-height 0.3s ease;
   max-height: 0;
-}
-
-#geradorSenhaBox:not(.oculto) {
-  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #geradorSenhaBox button:last-of-type {
   margin-top: 10px;
 }
+
+#geradorSenhaBox:not(.oculto) {
+  max-height: 400px;
+}
+
+.contador-caracteres {
+  font-size: 0.95rem;
+  color: #fff; /* branco mais forte */
+  margin-top: 10px; /* empurra mais para baixo */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+body.light-mode .contador-caracteres {
+  color: #222;
+}
+
+.senha-config {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.senha-config label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.range-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 15px 0;
+}
+
+.range-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.range-container button {
+  background-color: #ff0033;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.range-container button:hover {
+  background-color: #cc0029;
+}
+
+.range-container input[type="range"] {
+  width: 160px;
+  height: 4px;
+  appearance: none;
+  background: #555;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Faixa que desliza */
+.range-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #ff0033;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px #000;
+}
+
+/* Firefox */
+.range-container input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ff0033;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Botões de + e - reduzidos */
+.range-btn {
+  padding: 2px 6px;
+  font-size: 0.9rem;
+  background-color: #ff0033;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.range-btn:hover {
+  background-color: #cc002a;
+}
+
+#senhaGerada {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.range-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.range-container input[type="range"] {
+  width: 100%;
+  max-width: 250px;
+}
+
+.range-container button {
+  background-color: #e60033;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.range-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contador {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
 
 /* ==========================
    Senha
@@ -314,6 +483,140 @@ body.light-mode .senha-container button:hover {
   color: #cc0029;
 }
 
+.opcoes-senha {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.opcoes-senha label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.controle-tamanho {
+  margin: 15px 0;
+}
+
+.controle-tamanho label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.controle-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.controle-range input[type="range"] {
+  flex: 1;
+  max-width: 150px;
+}
+
+.controle-range button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff0033;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .controle-range button {
+  background-color: #cc0029;
+}
+
+.controle-range button:hover {
+  background-color: #cc0029;
+}
+
+body.light-mode .controle-range button:hover {
+  background-color: #99001f;
+}
+
+.controle-tamanho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.controle-tamanho button {
+  background-color: #d90429;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controle-tamanho button:hover {
+  background-color: #a4031f;
+}
+
+/* Novo estilo do range */
+.controle-tamanho input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 4px;
+  background: #444;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Chrome/Safari thumb */
+.controle-tamanho input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ff0033;
+  border: 3px solid white;
+  cursor: pointer;
+  margin-top: -8px;
+  transition: background 0.3s;
+}
+
+.controle-tamanho input[type="range"]::-webkit-slider-thumb:hover {
+  background: #cc0029;
+}
+
+/* Firefox thumb */
+.controle-tamanho input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ff0033;
+  border: 3px solid white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controle-tamanho input[type="range"]::-moz-range-thumb:hover {
+  background: #cc0029;
+}
+
+.controle-tamanho input[type="range"] {
+  accent-color: #d90429;
+  width: 150px;
+  height: 4px;
+}
+
 /* ==========================
    Conversor de Texto
 ========================== */
@@ -343,6 +646,18 @@ body.light-mode .senha-container button:hover {
   color: #fff;
   box-sizing: border-box;
 }
+
+#conversorBox textarea:focus {
+  border-color: #cc0029;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(204, 0, 41, 0.4);
+}
+
+body.light-mode #conversorBox textarea:focus {
+  border-color: #a4031f;
+  box-shadow: 0 0 0 2px rgba(164, 3, 31, 0.3);
+}
+
 
 body.light-mode #conversorBox textarea {
   background-color: #fff;
@@ -381,6 +696,53 @@ body.light-mode .btn-group button:hover {
   background-color: #99001f;
 }
 
+/* ==========================
+   Editor de PDF
+========================== */
+
+/* Estilo para o Editor de PDF */
+#editorPdfBox {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#editorPdfBox input[type="file"],
+#editorPdfBox input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+#editorPdfBox input[type="text"]::placeholder {
+  color: #999;
+}
+
+#editorPdfBox button {
+  padding: 0.5rem 1rem;
+  background-color: #d90429;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#editorPdfBox button:hover {
+  background-color: #a4001e;
+}
+
+.tool-card.oculto {
+  display: none;
+}
+
+.btn-group.editor-pdf {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 por linha */
+  gap: 10px;
+}
 /* ==========================
    Footer
 ========================== */
