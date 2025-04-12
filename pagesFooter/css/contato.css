@@ -1,81 +1,219 @@
+/* ==========================
+   Tema base escuro
+========================== */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0a0a0a;
-    color: #f2f2f2;
-  }
-  
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #f2f2f2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+/* ==========================
+   Header
+========================== */
+header {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+body.light-mode header {
+  background-color: #fff;
+  color: #111;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ff0033;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#themeToggle:focus {
+  outline: none;
+}
+
+body.light-mode #themeToggle {
+  color: #cc0029;
+}
+
+#themeToggle:hover {
+  color: #99001f;
+}
+
+#themeToggle::after {
+  content: attr(data-theme-icon);
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+/* ==========================
+   Container e Formulário
+========================== */
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+body.light-mode .container {
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+body.light-mode h1 {
+  color: #cc0029;
+}
+
+p {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+body.light-mode p {
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #eee;
+}
+
+body.light-mode label {
+  color: #111;
+}
+
+input,
+textarea {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ff0033;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+body.light-mode input,
+body.light-mode textarea {
+  background-color: #f4f4f4;
+  color: #111;
+  border: 1px solid #cc0029;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #cc0029;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff0033;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode button {
+  background-color: #cc0029;
+}
+
+button:hover {
+  background-color: #cc0029;
+}
+
+body.light-mode button:hover {
+  background-color: #99001f;
+}
+
+/* ==========================
+   Footer
+========================== */
+footer {
+  text-align: center;
+  padding: 30px 20px 20px;
+  font-size: 0.9rem;
+  background-color: #000;
+  color: #777;
+  margin-top: 40px;
+}
+
+body.light-mode footer {
+  background-color: #fff;
+  color: #555;
+}
+
+footer a.botao-voltar {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ff0033;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode footer a.botao-voltar {
+  background-color: #cc0029;
+}
+
+footer a.botao-voltar:hover {
+  background-color: #cc0029;
+}
+
+body.light-mode footer a.botao-voltar:hover {
+  background-color: #99001f;
+}
+
+@media (max-width: 600px) {
   .container {
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #111;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
   }
-  
-  h1 {
-    text-align: center;
-    color: #ff0033;
+
+  #themeToggle {
+    position: static;
+    margin-top: 10px;
   }
-  
-  p {
-    text-align: center;
-    color: #ccc;
-    margin-bottom: 30px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #eee;
-  }
-  
-  input,
-  textarea {
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ff0033;
-    border-radius: 6px;
-    background-color: #1e1e1e;
-    color: #fff;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #cc0029;
-    outline: none;
-  }
-  
-  button {
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background-color: #ff0033;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #cc0029;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 600px) {
-    .container {
-      margin: 20px;
-      padding: 20px;
-    }
-  }
-  
+}
