@@ -51,30 +51,6 @@ body.light-mode header {
   color: #111;
 }
 
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  color: #ff0033;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-body.light-mode nav a {
-  color: #cc0029;
-}
-
-nav a:hover {
-  color: #cc0029;
-}
-
-body.light-mode nav a:hover {
-  color: #99001f;
-}
-
 /* ==========================
    Botão de alternar tema
 ========================== */
